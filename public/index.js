@@ -141,18 +141,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+
+// Service Worker registration
+if (navigator.serviceWorker) {
+    //window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
             .then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
             })
             .catch((error) => {
-                console.error('Service Worker registration failed:', error);
+                console.error('ServiceWorker registration failed: ', error);
             });
-    });
+   // });
 }
 
-window.addEventListener('offline', () => {
-    alert('You are offline. Some features may not be available.');
-});
+// Notify user about offline status
+//window.addEventListener('offline', () => {
+  //  alert('You are offline. Some features may not be available.');
+//});
