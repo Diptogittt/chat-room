@@ -179,7 +179,7 @@ body::after {
 }
 
 .my-message .icon {
-    background-image: url('https://telegra.ph/file/9a053a5152da690e5f689.jpg');
+    background-image: url('https://telegra.ph/file/c6f5a45bbd3630b12bf1a.jpg');
     order: 2;
     margin-left: auto;
 }
@@ -245,9 +245,18 @@ body::after {
     flex-direction: column;
 }
 
-.message-time {
-    margin-left: 5px;
+.friend-time {
     font-size: 10px;
+    text-align: left;
+    display: block;
+    margin-right: auto;
+}
+
+.my-time {
+    font-size: 10px;
+    text-align: right;
+    display: block;
+    margin-left: auto;
 }
 
 .message-image {

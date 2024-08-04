@@ -86,11 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
             `<p class="message-text">${msg.text}</p>`;
 
         const senderClass = msg.sender === username ? 'my-sender' : 'friend-sender';
+        const timeClass = msg.sender === username ? 'my-time' : 'friend-time';
 
         div.innerHTML = `<div>
             <span class="${senderClass}">${msg.sender}</span>
             ${icon} ${content}
-            <span class="message-time">${new Date(msg.time).toLocaleTimeString()}</span>
+            <span class="${timeClass}">${new Date(msg.time).toLocaleTimeString()}</span>
         </div>`;
         chatLog.appendChild(div);
     }
@@ -139,4 +140,19 @@ document.addEventListener('DOMContentLoaded', () => {
             displayMessage(message);
         });
     });
+});
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
+
+window.addEventListener('offline', () => {
+    alert('You are offline. Some features may not be available.');
 });
