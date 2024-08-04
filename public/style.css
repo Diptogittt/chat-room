@@ -181,12 +181,12 @@ body::after {
 .my-message .icon {
     background-image: url('https://telegra.ph/file/9a053a5152da690e5f689.jpg');
     order: 2;
-    margin-left: 10px;
+    margin-left: auto;
 }
 
 .friend-message .icon {
     background-image: url('https://telegra.ph/file/41647c25e52af0214f2c7.jpg');
-    margin-right: 10px;
+    margin-right: auto;
 }
 
 .chat-container {
@@ -201,24 +201,26 @@ body::after {
 }
 
 .message-text {
-    background-color: #e0f7fa;
-    border-radius: 15px;
-    padding: 10px;
-    max-width: 100%;
-    color: #000;
-    word-wrap: break-word;
-    white-space: pre-line;
-    overflow-wrap: break-word;
+  background-color: #e0f7fa;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 90%;
+  color: #000;
+  word-wrap: break-word;
+  white-space: pre-line;
+  overflow-wrap: break-word;
 }
 
 .my-message .message-text {
-    align-self: flex-end;
+    align-self: flex-start;
     background-color: #e0f7fa;
+    margin-left: auto;
 }
 
 .friend-message .message-text {
     align-self: flex-start;
     background-color: #f1f1f1;
+    margin-right: auto;
 }
 
 .message-info {
@@ -226,9 +228,21 @@ body::after {
     color: #888;
 }
 
-.message-sender {
+.friend-sender {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+.my-sender {
     font-weight: bold;
     text-align: right;
+    display: block;
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
 }
 
 .message-time {

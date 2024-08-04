@@ -85,15 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
             `<img src="${msg.text}" class="message-image" />` :
             `<p class="message-text">${msg.text}</p>`;
 
+        const senderClass = msg.sender === username ? 'my-sender' : 'friend-sender';
+
         div.innerHTML = `<div>
-<span class="message-sender">${msg.sender}</span>
-                ${icon} ${content}
-    <span class="message-time">${new Date(msg.time).toLocaleTimeString()}</span>
-            </div>`;
+            <span class="${senderClass}">${msg.sender}</span>
+            ${icon} ${content}
+            <span class="message-time">${new Date(msg.time).toLocaleTimeString()}</span>
+        </div>`;
         chatLog.appendChild(div);
     }
 
- onlineStatus.addEventListener('click', () => {
+    onlineStatus.addEventListener('click', () => {
         showOnlineStatus();
     });
 
