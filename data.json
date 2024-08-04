@@ -1,0 +1,36 @@
+{
+  "rooms": {
+    "test": {
+      "messages": [
+        {
+          "sender": "dipto",
+          "text": "Hey",
+          "time": "2024-08-04T06:02:45.542Z"
+        },
+        {
+          "sender": "dipto",
+          "text": "How are you",
+          "time": "2024-08-04T06:02:52.747Z"
+        },
+        {
+          "sender": "dipto",
+          "text": "/bot how are you",
+          "time": "2024-08-04T06:02:58.151Z"
+        },
+        {
+          "sender": "bot",
+          "text": " 𝗵𝗼𝘄 𝗮𝗿𝗲 𝘆𝗼𝘂 𝗱𝗼𝗶𝗻𝗴?🐥",
+          "time": "2024-08-04T06:03:00.856Z"
+        },
+        {
+          "sender": "dipto",
+          "text": "hey",
+          "time": "2024-08-04T06:09:07.881Z"
+        }
+      ],
+      "users": {
+        "0143": "dipto"
+      }
+    }
+  }
+}

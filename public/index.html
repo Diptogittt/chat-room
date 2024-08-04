@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Your Baby Chat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Your Baby Chat Group</h3>
+            <div class="online-status" id="online-status">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="info">
+            <a href="#">Chat with Friends</a>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div id="chat-log"></div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Send a message">
+            <input type="file" id="image-input" accept="image/*" />
+            <button id="send-button">
+                <i class="fa-solid fa-paper-plane" id="button-icon"></i>
+            </button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="info-box">
+            <h2>Enter Chat Room Details</h2>
+            <input type="text" id="room-input" placeholder="Room">
+            <input type="text" id="username-input" placeholder="Username">
+            <input type="text" id="userId-input" placeholder="User ID">
+            <button id="join-button">Join</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

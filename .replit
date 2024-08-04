@@ -1,0 +1,14 @@
+run = "node server.js"  # Run the server file
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-23_05"
+
+[deployment]
+deploymentTarget = "static"
+build = ["npm", "run", "build"]
+publicDir = "public"  # Change to "dist" if you have a build directory
+
+[[ports]]
+localPort = 3000
+externalPort = 80

@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeIn 2s forwards, changeBackground 50s infinite;
+}
+
+@keyframes changeBackground {
+  0% { background-image: url('https://i.ibb.co/8mj1VwP/received-7860937123926714.jpg'); }
+  20% { background-image: url('https://i.ibb.co/N32xqB0/makima.png'); }
+  40% { background-image: url('https://i.ibb.co/Cw2pTFb/gojo.png'); }
+  60% { background-image: url('https://i.ibb.co/DWDVyHj/girl.png'); }
+  80% { background-image: url('https://i.ibb.co/Zzr0861/cat.png'); }
+  100% { background-image: url('https://i.ibb.co/8mj1VwP/received-7860937123926714.jpg'); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+* {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 2;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    border-bottom: 1px solid #5c5c66;
+    height: 45px;
+}
+
+.header h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+}
+
+.info a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.info a:hover {
+    color: #4caf50;
+}
+
+.input-container {
+    background-color: #343541;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #5c5c66;
+}
+
+#user-input {
+    background-color: #40414f;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 8px;
+    flex: 1;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#user-input::placeholder {
+    color: #8e8e8e;
+}
+
+#image-input {
+    border: none;
+    background: #40414f;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#send-button {
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#send-button i {
+    font-size: 16px;
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.chat-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  animation: changeBackground 50s infinite;
+  opacity: 0.5; 
+}
+
+.chat-message .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.my-message .icon {
+    background-image: url('https://telegra.ph/file/9a053a5152da690e5f689.jpg');
+    order: 2;
+    margin-left: 10px;
+}
+
+.friend-message .icon {
+    background-image: url('https://telegra.ph/file/41647c25e52af0214f2c7.jpg');
+    margin-right: 10px;
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    height: calc(100vh - 145px);
+}
+
+.message-text {
+    background-color: #e0f7fa;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 100%;
+    color: #000;
+    word-wrap: break-word;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.my-message .message-text {
+    align-self: flex-end;
+    background-color: #e0f7fa;
+}
+
+.friend-message .message-text {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+}
+
+.message-info {
+    font-size: 12px;
+    color: #888;
+}
+
+.message-sender {
+    font-weight: bold;
+    text-align: right;
+}
+
+.message-time {
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.message-image {
+    max-width: 200px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.my-message .message-text,
+.my-message .message-image {
+    background-color: #e0f7fa;
+}
+
+.friend-message .message-text,
+.friend-message .message-image {
+    background-color: #f1f1f1;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('https://telegra.ph/file/97cb716a62c029eb30d29.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.info-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.info-box input {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.info-box button {
+    padding: 10px 20px;
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.info-box button:hover {
+    background: #45a049;
+}
+
+.chat-container #user-icon {
+    order: 2;
+    margin-left: 10px;
+}
+
+.chat-container #bot-icon {
+    margin-right: 10px;
+}
+
+.chat-container #user-icon i{
+    background-color: #19c37d;
+    padding: 10px 11px;
+    border-radius: 60%;
+}
+
+.chat-container #bot-icon i {
+    background-color: #6600ff;
+    padding: 10px 11px;
+    border-radius: 50%;
+}
